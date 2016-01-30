@@ -1,7 +1,6 @@
 package simpletable
 
 import (
-	"os"
 	"testing"
 )
 
@@ -19,7 +18,7 @@ func TestPrintStringSlice(t *testing.T) {
 		t.Fatal(err)
 	}
 	table.Sort(2)
-	err = table.Write(os.Stdout)
+	err = table.Print()
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -34,7 +33,7 @@ func TestPrintNumberSlice(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	err = table.Write(os.Stdout)
+	err = table.Print()
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -67,7 +66,7 @@ func TestPrintStruct(t *testing.T) {
 		t.Fatal(err)
 	}
 	table.Sort(0)
-	err = table.Write(os.Stdout)
+	err = table.Print()
 	if err != nil {
 		t.Fatal(err)
 	}

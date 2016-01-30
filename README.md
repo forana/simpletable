@@ -10,8 +10,6 @@ See [https://godoc.org/github.com/forana/simpletable](https://godoc.org/github.c
 package main
 
 import (
-	"os"
-
 	"github.com/forana/simpletable"
 )
 
@@ -44,8 +42,8 @@ func main() {
 		panic(err)
 	}
 
-	table.Sort(0) // name
-	table.Write(os.Stdout)
+	table.Sort(0) // Name
+	table.Print()
 }
 ```
 

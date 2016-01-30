@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"io"
+	"os"
 	"reflect"
 	"sort"
 	"strings"
@@ -89,6 +90,11 @@ func (table *SimpleTable) Write(w io.Writer) (err error) {
 		}
 	}
 	return
+}
+
+// Print prints the table, including headers, to stdout.
+func (table *SimpleTable) Print() error {
+	return table.Write(os.Stdout)
 }
 
 func formatRow(row []string, widths []int) string {
